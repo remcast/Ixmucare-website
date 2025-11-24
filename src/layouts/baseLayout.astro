@@ -1,6 +1,7 @@
 ---
-import '../styles/global.css';
-import Header from '../components/header.astro';
+import "../styles/global.css";
+import Header from "../components/header.astro";
+import Footer from "../components/Footer.astro";
 const { pageTitle } = Astro.props;
 ---
 
@@ -9,15 +10,75 @@ const { pageTitle } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{pageTitle}</title>
-        <meta name="description" content="Restaurante Ixmucare en Paraíso, Tabasco. Disfruta de cocina tradicional, ambiente familiar y excelente servicio.">
-        <meta name="keywords" content="Restaurante, Ixmucare, Cocina tradicional, Paraíso, Tabasco, Comida mexicana, Platillos típicos, Ambiente familiar, Servicio excelente">
+        <meta
+            name="description"
+            content="Restaurante Ixmucare en Paraíso, Tabasco. Disfruta de cocina tradicional, ambiente familiar y excelente servicio."
+        />
+        <meta
+            name="keywords"
+            content="Restaurante, Ixmucare, Cocina tradicional, Paraíso, Tabasco, Comida mexicana, Platillos típicos, Ambiente familiar, Servicio excelente"
+        />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ixmucare.netlify.app/" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ixmucare.netlify.app/" />
+        <meta property="og:title" content={pageTitle} />
+        <meta
+            property="og:description"
+            content="Restaurante Ixmucare en Paraíso, Tabasco. Disfruta de cocina tradicional, ambiente familiar y excelente servicio."
+        />
+        <meta
+            property="og:image"
+            content="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://ixmucare.netlify.app/" />
+        <meta property="twitter:title" content={pageTitle} />
+        <meta
+            property="twitter:description"
+            content="Restaurante Ixmucare en Paraíso, Tabasco. Disfruta de cocina tradicional, ambiente familiar y excelente servicio."
+        />
+        <meta
+            property="twitter:image"
+            content="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        />
+
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Restaurant",
+                "name": "Restaurante Ixmucare",
+                "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Calle Principal S/N",
+                    "addressLocality": "Paraíso",
+                    "addressRegion": "Tabasco",
+                    "postalCode": "86600",
+                    "addressCountry": "MX"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 18.4,
+                    "longitude": -93.2144
+                },
+                "url": "https://ixmucare.netlify.app/",
+                "telephone": "+529331234567",
+                "servesCuisine": "Mexicana, Mariscos",
+                "priceRange": "$$"
+            }
+        </script>
     </head>
-    <body class="bg-[#588157]">
-    <Header />
-    <main>
-        <slot />
-    </main>
+    <body class="bg-[#588157] min-h-screen flex flex-col">
+        <Header />
+        <main class="flex-grow">
+            <slot />
+        </main>
+        <Footer />
     </body>
 </html>

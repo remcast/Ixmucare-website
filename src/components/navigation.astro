@@ -1,9 +1,118 @@
 ---
+
 ---
-<div class="p-6 flex justify-around bg-gray-50">
-    <a href="/" class="font-serif text-[1rem]">Inicio</a>
-    <a href="/menu" class="font-serif text-[1rem]">Menu</a>
-    <a href="/gallery" class="font-serif text-[1rem]">Galeria</a>
-    <a href="/about" class="font-serif text-[1rem]">Sobre nosotros</a>
-    <a href="/contact" class="font-serif text-[1rem]">Contacto</a>
+
+<div
+    class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300"
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a
+                    href="/"
+                    class="font-serif font-bold text-2xl text-[#344e41] tracking-wider hover:text-[#588157] transition-colors"
+                >
+                    IXMUCARE
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a
+                    href="/"
+                    class="font-medium text-[#344e41] hover:text-[#a3b18a] transition-colors"
+                    >INICIO</a
+                >
+                <a
+                    href="/menu"
+                    class="font-medium text-[#344e41] hover:text-[#a3b18a] transition-colors"
+                    >MENÚ</a
+                >
+                <a
+                    href="/gallery"
+                    class="font-medium text-[#344e41] hover:text-[#a3b18a] transition-colors"
+                    >GALERÍA</a
+                >
+                <a
+                    href="/about"
+                    class="font-medium text-[#344e41] hover:text-[#a3b18a] transition-colors"
+                    >NOSOTROS</a
+                >
+                <a
+                    href="/contact"
+                    class="bg-[#588157] text-white px-5 py-2 rounded-full font-medium hover:bg-[#3a5a40] transition-colors shadow-md"
+                >
+                    CONTACTO
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button
+                    id="mobile-menu-button"
+                    class="text-[#344e41] hover:text-[#588157] focus:outline-none p-2"
+                    aria-label="Abrir menú"
+                >
+                    <svg
+                        class="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg"
+    >
+        <div class="px-4 pt-2 pb-6 space-y-2">
+            <a
+                href="/"
+                class="block px-3 py-3 rounded-md text-base font-medium text-[#344e41] hover:text-[#588157] hover:bg-gray-50"
+                >INICIO</a
+            >
+            <a
+                href="/menu"
+                class="block px-3 py-3 rounded-md text-base font-medium text-[#344e41] hover:text-[#588157] hover:bg-gray-50"
+                >MENÚ</a
+            >
+            <a
+                href="/gallery"
+                class="block px-3 py-3 rounded-md text-base font-medium text-[#344e41] hover:text-[#588157] hover:bg-gray-50"
+                >GALERÍA</a
+            >
+            <a
+                href="/about"
+                class="block px-3 py-3 rounded-md text-base font-medium text-[#344e41] hover:text-[#588157] hover:bg-gray-50"
+                >NOSOTROS</a
+            >
+            <a
+                href="/contact"
+                class="block px-3 py-3 rounded-md text-base font-medium text-[#588157] font-bold hover:bg-gray-50"
+                >CONTACTO</a
+            >
+        </div>
+    </div>
 </div>
+
+<script>
+    const btn = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    }
+</script>

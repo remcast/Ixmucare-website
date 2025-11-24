@@ -1,8 +1,254 @@
 ---
-import BaseLayout from '../layouts/baseLayout.astro';
-const pageTitle = 'Restaurante Ixmucare | Cocina tradicional en Paraíso, Tabasco';
+import BaseLayout from "../layouts/baseLayout.astro";
+const pageTitle = "Restaurante Ixmucare | Cocina tradicional y Naturaleza";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<p>Bienvenido a la página de inicio de Ixmucare</p>
+	<!-- Hero Section -->
+	<section
+		class="relative h-[80vh] flex items-center justify-center text-center text-white overflow-hidden"
+	>
+		<div class="absolute inset-0 bg-black/40 z-10"></div>
+		<!-- Placeholder for Hero Image - ideally a photo of the restaurant with green areas -->
+		<div
+			class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"
+		>
+		</div>
+
+		<div class="relative z-20 px-4 max-w-4xl mx-auto">
+			<h1
+				class="text-5xl md:text-7xl font-serif font-bold mb-6 drop-shadow-lg"
+			>
+				Ixmucare
+			</h1>
+			<p class="text-xl md:text-2xl mb-8 font-light drop-shadow-md">
+				Donde la frescura del mar se encuentra con la belleza de la
+				naturaleza en Paraíso, Tabasco.
+			</p>
+			<a
+				href="/menu"
+				class="inline-block bg-[#a3b18a] text-[#344e41] px-8 py-3 rounded-full font-bold text-lg hover:bg-[#dad7cd] transition-colors duration-300 shadow-lg"
+			>
+				Ver Menú
+			</a>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="py-12 md:py-20 px-4 bg-[#dad7cd] text-[#344e41]">
+		<div
+			class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+		>
+			<div>
+				<h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">
+					Nuestra Esencia
+				</h2>
+				<p class="text-lg mb-4 leading-relaxed">
+					En Ixmucare, no solo servimos comida; ofrecemos una
+					experiencia. Nuestra cocina tradicional de mariscos se
+					prepara con los ingredientes más frescos de la región,
+					honrando las recetas de antaño.
+				</p>
+				<p class="text-lg leading-relaxed">
+					Todo esto en un entorno rodeado de exuberantes zonas verdes,
+					diseñado para que te desconectes de la rutina y conectes con
+					la naturaleza y el buen comer.
+				</p>
+			</div>
+			<div class="rounded-2xl overflow-hidden shadow-xl h-96 bg-gray-300">
+				<!-- Placeholder for About Image -->
+				<img
+					src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+					alt="Platillo de mariscos"
+					class="w-full h-full object-cover"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Highlights / Menu Preview -->
+	<section class="py-12 md:py-20 px-4 bg-[#fefae0]">
+		<div class="max-w-6xl mx-auto text-center">
+			<h2
+				class="text-3xl md:text-4xl font-serif font-bold mb-8 md:mb-12 text-[#344e41]"
+			>
+				Favoritos de la Casa
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<!-- Card 1 -->
+				<div
+					class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+				>
+					<div class="h-64 overflow-hidden">
+						<img
+							src="https://images.unsplash.com/photo-1599084993091-1a820b293b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+							alt="Ceviche"
+							class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+						/>
+					</div>
+					<div class="p-6">
+						<h3 class="text-xl font-bold mb-2 text-[#3a5a40]">
+							Ceviche Ixmucare
+						</h3>
+						<p class="text-gray-600">
+							Fresco pescado marinado en cítricos con el toque
+							secreto de la casa.
+						</p>
+					</div>
+				</div>
+				<!-- Card 2 -->
+				<div
+					class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+				>
+					<div class="h-64 overflow-hidden">
+						<img
+							src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+							alt="Camarones"
+							class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+						/>
+					</div>
+					<div class="p-6">
+						<h3 class="text-xl font-bold mb-2 text-[#3a5a40]">
+							Camarones al Coco
+						</h3>
+						<p class="text-gray-600">
+							Crujientes camarones empanizados con coco, servidos
+							con salsa de mango.
+						</p>
+					</div>
+				</div>
+				<!-- Card 3 -->
+				<div
+					class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+				>
+					<div class="h-64 overflow-hidden">
+						<img
+							src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+							alt="Pescado Frito"
+							class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+						/>
+					</div>
+					<div class="p-6">
+						<h3 class="text-xl font-bold mb-2 text-[#3a5a40]">
+							Mojarra Frita
+						</h3>
+						<p class="text-gray-600">
+							La clásica mojarra frita, crujiente por fuera y
+							jugosa por dentro.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="mt-12">
+				<a
+					href="/menu"
+					class="inline-block border-2 border-[#3a5a40] text-[#3a5a40] px-8 py-3 rounded-full font-bold text-lg hover:bg-[#3a5a40] hover:text-white transition-colors duration-300"
+				>
+					Ver Menú Completo
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Green Zones Section -->
+	<section
+		class="py-12 md:py-20 px-4 bg-[#588157] text-white relative overflow-hidden"
+	>
+		<div
+			class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+		>
+			<!-- Decorative pattern or texture could go here -->
+			<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<pattern
+						id="leaf-pattern"
+						width="40"
+						height="40"
+						patternUnits="userSpaceOnUse"
+					>
+						<path
+							d="M20 0C10 0 0 10 0 20C0 30 10 40 20 40C30 40 40 30 40 20C40 10 30 0 20 0Z"
+							fill="white"></path>
+					</pattern>
+				</defs>
+				<rect width="100%" height="100%" fill="url(#leaf-pattern)"
+				></rect>
+			</svg>
+		</div>
+		<div
+			class="max-w-6xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+		>
+			<div
+				class="order-2 md:order-1 rounded-2xl overflow-hidden shadow-2xl h-96"
+			>
+				<img
+					src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+					alt="Jardín del restaurante"
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<div class="order-1 md:order-2">
+				<h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">
+					Un Oasis Verde
+				</h2>
+				<p class="text-lg mb-6 text-gray-100">
+					Relájate en nuestras amplias zonas verdes. Ixmucare es el
+					lugar perfecto para disfrutar de una tarde soleada en
+					familia, rodeado de naturaleza y aire fresco.
+				</p>
+				<ul class="space-y-4 mb-8">
+					<li class="flex items-center">
+						<span class="bg-[#a3b18a] p-2 rounded-full mr-4"
+							>🌿</span
+						>
+						<span>Áreas de juego para niños</span>
+					</li>
+					<li class="flex items-center">
+						<span class="bg-[#a3b18a] p-2 rounded-full mr-4"
+							>🌺</span
+						>
+						<span>Jardines botánicos</span>
+					</li>
+					<li class="flex items-center">
+						<span class="bg-[#a3b18a] p-2 rounded-full mr-4"
+							>☀️</span
+						>
+						<span>Terrazas al aire libre</span>
+					</li>
+				</ul>
+				<a
+					href="/gallery"
+					class="inline-block bg-white text-[#588157] px-8 py-3 rounded-full font-bold text-lg hover:bg-[#dad7cd] transition-colors duration-300"
+				>
+					Ver Galería
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-12 md:py-20 px-4 bg-[#344e41] text-white text-center">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl md:text-5xl font-serif font-bold mb-6">
+				¿Listo para visitarnos?
+			</h2>
+			<p class="text-xl mb-10 text-gray-300">
+				Reserva tu mesa hoy y vive la experiencia Ixmucare.
+			</p>
+			<div class="flex flex-col md:flex-row justify-center gap-6">
+				<a
+					href="/contact"
+					class="bg-[#a3b18a] text-[#344e41] px-8 py-4 rounded-full font-bold text-xl hover:bg-[#dad7cd] transition-colors duration-300 shadow-lg"
+				>
+					Contactar Ahora
+				</a>
+				<a
+					href="tel:+529331234567"
+					class="border-2 border-[#a3b18a] text-[#a3b18a] px-8 py-4 rounded-full font-bold text-xl hover:bg-[#a3b18a] hover:text-[#344e41] transition-colors duration-300"
+				>
+					Llamar: (933) 123 4567
+				</a>
+			</div>
+		</div>
+	</section>
 </BaseLayout>

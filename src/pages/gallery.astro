@@ -1,8 +1,46 @@
 ---
-import BaseLayout from '../layouts/baseLayout.astro';
-const pageTitle = 'Restaurante Ixmucare | Gallería';
+import BaseLayout from "../layouts/baseLayout.astro";
+const pageTitle = "Galería | Restaurante Ixmucare";
+
+const images = [
+    "https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1599084993091-1a820b293b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1534939561126-855b8675edd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1551632436-cbf8dd354ca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	
+    <section class="bg-[#dad7cd] py-16 text-center">
+        <h1
+            class="text-4xl md:text-6xl font-serif font-bold text-[#344e41] mb-4"
+        >
+            Galería
+        </h1>
+        <p class="text-xl text-[#588157]">
+            Un vistazo a nuestra cocina y espacios
+        </p>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {
+                images.map((img, index) => (
+                    <div
+                        class={`rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${index % 3 === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
+                    >
+                        <img
+                            src={img}
+                            alt="Galería Ixmucare"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
 </BaseLayout>

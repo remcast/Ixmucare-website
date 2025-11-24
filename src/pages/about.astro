@@ -1,8 +1,76 @@
 ---
-import BaseLayout from '../layouts/baseLayout.astro';
-const pageTitle = 'Restaurante Ixmucare | Sobre nosotros';
+import BaseLayout from "../layouts/baseLayout.astro";
+const pageTitle = "Sobre Nosotros | Restaurante Ixmucare";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	
+    <section class="bg-[#dad7cd] py-16 text-center">
+        <h1
+            class="text-4xl md:text-6xl font-serif font-bold text-[#344e41] mb-4"
+        >
+            Nuestra Historia
+        </h1>
+        <p class="text-xl text-[#588157]">Tradición, Familia y Naturaleza</p>
+    </section>
+
+    <div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
+        <!-- Story Section -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-serif font-bold text-[#3a5a40] mb-6">
+                    El Comienzo
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Ixmucare nació del sueño de compartir la auténtica cocina de
+                    mariscos de Tabasco en un ambiente que honrara nuestra
+                    tierra.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Fundado en el corazón de Paraíso, nuestro restaurante ha
+                    crecido manteniendo siempre la esencia de la cocina casera y
+                    el amor por los ingredientes frescos.
+                </p>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg h-80">
+                <img
+                    src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Cocina tradicional"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        </div>
+
+        <!-- Values Section -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div
+                class="order-2 md:order-1 rounded-xl overflow-hidden shadow-lg h-80"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Ingredientes frescos"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-serif font-bold text-[#3a5a40] mb-6">
+                    Nuestra Filosofía
+                </h2>
+                <ul class="space-y-4 text-lg text-gray-700">
+                    <li class="flex items-start">
+                        <span class="text-[#588157] font-bold mr-2">✓</span>
+                        Frescura ante todo: Solo usamos mariscos del día.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#588157] font-bold mr-2">✓</span>
+                        Respeto por la naturaleza: Cuidamos nuestras zonas verdes
+                        y el medio ambiente.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#588157] font-bold mr-2">✓</span>
+                        Hospitalidad tabasqueña: Te hacemos sentir como en casa.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </BaseLayout>
