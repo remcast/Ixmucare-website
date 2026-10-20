@@ -1,8 +1,46 @@
 ---
-import Navigation from './navigation.astro' ;
+
 ---
-<header>
-    <nav>
-        <Navigation />
-    </nav>
+{/*comportamiento global de la barra de navegación */}
+<header class="bg-stone-50 shadow-sm sticky top-0 z-50">
+    {/*tamaños y margenes de la barra */}
+    <div class="max-w-full px-6 py-4 flex flex-row justify-between items-center">
+        <a href="/" class="font-bold text-3xl text-stone-900">
+            Ixmucare
+        </a>
+        {/*menu para escritorio */}
+        <nav class="hidden md:flex gap-8 items-center">
+            <a href="/menu" class="font-medium text-stone-800 hover:text-lime-600 transition-colors">
+                Menu
+            </a>
+            <a href="/about" class="font-medium text-stone-800 hover:text-lime-600 transition-colors">
+                Sobre Nosotros
+            </a>
+            <a href="/gallery" class="font-medium text-stone-800 hover:text-lime-600 transition-colors">
+                Galería
+            </a>
+            <a href="/contact" class="font-medium bg-lime-600 text-stone-50 mr-4 px-4 py-2 rounded-2xl hover:bg-amber-700 transition-colors">
+                Contacto
+            </a>
+        </nav>
+        {/*menu para dispositivos moviles */}
+        <button class="menu md:hidden text-stone-900 p-2 focus:outline-none" aria-expanded="false" aria-controls="main-menu" class="menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+    </div>
+    {/* contenedor del menú móvil */}
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full anima flex-col bg-stone-50 border-t border-stone-200 px-6 py-4 md:hidden shadow-lg">
+        <a href="/menu" class="py-3 border-b border-stone-200 text-stone-800 font-medium">
+            Menu
+        </a>
+        <a href="/contact" class="py-3 border-b border-stone-200 text-stone-800 font-medium">
+            Contacto
+        </a>
+        <a href="/about" class="py-3 border-b border-stone-200 text-stone-800 font-medium">
+            Sobre Nosotros
+        </a>
+        <a href="/gallery" class="py-3  text-stone-800 font-medium">
+            Galería
+        </a>
+    </div>
 </header>

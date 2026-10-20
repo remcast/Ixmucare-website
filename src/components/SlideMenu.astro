@@ -1,0 +1,76 @@
+---
+import {categorias, platillos} from "../data/menuData.js";
+---
+<section class="max-w-4xl mx-auto py-12 px-4">
+    <div class="flex overflow-x-auto gap-6 pb-4 mb-8 snap-x scrollbar-hide ">
+        {categorias.map((cat, index)=>(
+            <button class={`category-btn flex flex-col items-center gap-2 snap-center shrink-0 transition-all ${index === 0 ? `opacity-100 font-bold text-lime-600` : `opacity-50 text-stone-600 hover:opacity-100`}`} data-target={`section-${cat.id}`}>
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center text-3xl shadow-sm border border-stone-200">
+                    {cat.icono}
+                </div>
+                <span class="text-xs md:text-sm uppercase tracking-wider">
+                    {cat.nombre}
+                </span>
+            </button>
+        ))}
+    </div>
+    <div>
+        {categorias.map((cat, index)=>(
+            <div id={`section-${cat.id}`}
+                class={`menu-section transition-opacity duration-300 ${index === 0 ? `block`: `hidden`}`}
+            >   
+                {/* titulo */}
+                <h2 class="text-2xl font-bold text-lime-600 uppercase tracking-widest mb-6 border-b border-stone-200 pb-2">
+                    {cat.nombre}
+                </h2>
+                {/*platillos */}
+                <div class="flex flex-col gap-6">
+                    {platillos.filter(p => p.categoria_id === cat.id).map(platillo=>(
+                        <article class="flex flex-col">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h3 class="text-sm font-medium uppercase text-stone-900">
+                                    {platillo.nombre}
+                                </h3>
+                                
+                                <span class="text-sm font-medium text-stone-800">
+                                    {platillo.precio}$
+                                </span>
+                            </div>
+                            <p class="text-stone-600 text-sm mt-1">
+                                {platillo.descripcion}
+                            </p>
+                            <div class="flex-grow border-b-2 pt-2 border-dotted border-stone-300"></div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        ))}
+    </div>
+    <script>
+        const botones = document.querySelectorAll(`.category-btn`);
+        const secciones = document.querySelectorAll(`.menu-section`);
+
+        botones.forEach(boton => {
+            boton.addEventListener(`click`, () =>{
+                {/*leer */}
+                const targetId = boton.getAttribute(`data-target`) || "";
+                {/*reset */}
+                secciones.forEach(sec => {
+                    sec.classList.remove(`block`);
+                    sec.classList.add(`hidden`);
+                })
+                botones.forEach(boton => {
+                    boton.classList.remove(`font-bold`, `text-lime-600`, `opacity-100`);
+                    boton.classList.add(`text-stone-600`, `opacity-50`);
+                })
+                const targetSection = document.getElementById(targetId);
+                if(targetSection){
+                    targetSection.classList.remove(`hidden`);
+                    targetSection.classList.add(`block`);
+                }
+                boton.classList.remove(`text-stone-600`, `opacity-50`);
+                boton.classList.add(`font-bold`, `text-lime-600`, `opacity-100`);
+            });
+        });
+    </script>
+</section>
