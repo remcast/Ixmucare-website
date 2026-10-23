@@ -1,3 +1,39 @@
 ---
 
 ---
+<footer class="bg-stone-900 text-stone-300 py-14 border-t-4 border-lime-600 px-4 w-full">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="flex flex-col text-center md:text-left">
+            <h2 class="text-2xl font-bold uppercase text-white mb-4 tracking-wide">
+                IXMUCARE
+            </h2>
+            <address class="not-italic mb-6 text-stone-300 leading-relaxed">
+                <p class="text-lg font-medium">Calle Ixmucare, sección tanques, </p>
+                <p>Paraíso, Tabasco, México. CP 86620</p>
+            </address>
+            <div>
+                <h3 class="uppercase text-lime-600 text-sm font-bold">horario de servicio</h3>
+                <p>Lunes a Domingo: 10:00AM - 7:00PM</p>
+            </div>
+            
+        </div>
+        <!--  Mapa Funcional -->
+        <div class="w-full h-72 md:h-72 min-h-[300px] rounded-2xl overflow-hidden shadow-xl border border-stone-800">
+            <!-- El iframe de Google Maps con carga diferida (lazy) para no afectar la velocidad -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2250.7432235307692!2d-93.09017622845128!3d18.425418401490155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ee5f2d75371c07%3A0xd830a32a05a73609!2sEcoturistica%20Ixmucare!5e0!3m2!1sen!2smx!4v1792734665037!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+    <div class="max-w-5xl mx-auto mt-8 pt-2 border-t border-stone-500 text-center text-sm text-stone-500">
+        <p>
+            &copy; {new Date().getFullYear()} Restaurate Ixmucare. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>

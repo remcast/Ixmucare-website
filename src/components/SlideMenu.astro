@@ -1,12 +1,16 @@
 ---
 import {categorias, platillos} from "../data/menuData.js";
 ---
-<section class="max-w-4xl mx-auto py-12 px-4">
+<section class="max-w-3xl mx-auto py-12 px-4">
     <div class="flex overflow-x-auto gap-6 pb-4 mb-8 snap-x scrollbar-hide ">
         {categorias.map((cat, index)=>(
             <button class={`category-btn flex flex-col items-center gap-2 snap-center shrink-0 transition-all ${index === 0 ? `opacity-100 font-bold text-lime-600` : `opacity-50 text-stone-600 hover:opacity-100`}`} data-target={`section-${cat.id}`}>
                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center text-3xl shadow-sm border border-stone-200">
-                    {cat.icono}
+                    <img 
+                        src={cat.icono} 
+                        alt={cat.nombre}
+                        class="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" 
+/>
                 </div>
                 <span class="text-xs md:text-sm uppercase tracking-wider">
                     {cat.nombre}
