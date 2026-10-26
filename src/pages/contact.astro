@@ -43,7 +43,7 @@ const pageTitle = "Contacto | Restaurante Ixmucare";
             </div>
             {/*Formulario */}
             <div class="flex flex-col">
-                <form method="post" action=""
+                <form method="post" action="" data-netlify="true"
                 class="flex flex-col w-full max-w-md mx-auto bg-stone-800 rounded-2xl">
                     <div class="pt-4 mb-4">
                         <h3 class="text-2xl font-medium text-lime-400">Formulario de contacto</h3>
@@ -55,9 +55,9 @@ const pageTitle = "Contacto | Restaurante Ixmucare";
                         <input 
                         type="text"
                         name="nombre"
-                        pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]{0,40}"
+                        pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]{2,40}"
                         maxlength="40" 
-                        title="El nombre nodebe ser mayor a 40 caracteres, sin números ni caracteres especiales."
+                        title="El nombre no debe ser mayor a 40 caracteres, sin números ni caracteres especiales."
                         required
                         placeholder="E.g.Juan"
                         class="text-amber-200 px-2 py-1 border border-stone-50 rounded-sm outline-none focus:border-blue-500 valid:border-lime-500 invalid:focus:border-red-500"
@@ -91,10 +91,10 @@ const pageTitle = "Contacto | Restaurante Ixmucare";
                     <label class="flex flex-col w-full max-w-2xs mx-auto gap-2 mt-5">
                         <span class="text-lime-400">Comentarios</span>
                         <textarea 
-                        name="comnetarios"
+                        name="comentarios"
                         rows="3"
                         maxlength="200"
-                        title="maximo 200 carecteres"
+                        title="Máximo 200 carecteres"
                         class="text-amber-200 resize-none px-2 py-1 border border-stone-50 rounded-sm outline-none focus:border-blue-500"
                         ></textarea>
                     </label>

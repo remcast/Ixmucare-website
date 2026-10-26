@@ -1,76 +1,89 @@
 ---
-import "../styles/global.css";
+const { 
+  pageTitle = "Restaurante Ixmucare | Mariscos y Comida Tradicional en Paraíso, Tabasco",
+  pageDescription = "El mejor restaurante familiar en Paraíso, Tabasco. Disfruta de mariscos frescos, coctelería, pescados y cocina tradicional cerca de Puerto Ceiba y Dos Bocas."
+} = Astro.props;
+// Genera automáticamente la URL exacta de la página actual (ej. /menu o /contact)
+const canonicalURL = new URL(Astro.url.pathname, "https://ixmucare.netlify.app");
+const socialImageURL = new URL("/interior.jpg", "https://ixmucare.netlify.app");
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-const { pageTitle } = Astro.props;
+import "../styles/global.css";
 ---
 
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        
+        <!-- SEO Principal -->
         <title>{pageTitle}</title>
-        <meta
-            name="description"
-            content="Restaurante Ixmucare en Paraíso, Tabasco. Disfruta de cocina tradicional, ambiente familiar y excelente servicio."
-        />
-        <meta
-            name="keywords"
-            content="Restaurante, Ixmucare, Cocina tradicional, Paraíso, Tabasco, Comida mexicana, Platillos típicos, Ambiente familiar, Servicio excelente"
-        />
+        <meta name="description" content={pageDescription} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ixmucare.netlify.app/" />
+        <link rel="canonical" href={canonicalURL} />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ixmucare.netlify.app/" />
+        <!-- Geo-tags para SEO Local en Tabasco -->
+        <meta name="geo.region" content="MX-TAB" />
+        <meta name="geo.placename" content="Paraíso, Tabasco" />
+        <meta name="geo.position" content="18.3983;-93.2125" />
+        <meta name="ICBM" content="18.3983, -93.2125" />
+
+        <!-- Open Graph / WhatsApp / Facebook -->
+        <meta property="og:type" content="restaurant" />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:url" content={canonicalURL} />
         <meta property="og:title" content={pageTitle} />
-        <meta
-            property="og:description"
-            content="Restaurante Ixmucare en Paraíso, Tabasco. Disfruta de cocina tradicional, ambiente familiar y excelente servicio."
-        />
-        <meta
-            property="og:image"
-            content="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-        />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={socialImageURL} />
 
         <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://ixmucare.netlify.app/" />
-        <meta property="twitter:title" content={pageTitle} />
-        <meta
-            property="twitter:description"
-            content="Restaurante Ixmucare en Paraíso, Tabasco. Disfruta de cocina tradicional, ambiente familiar y excelente servicio."
-        />
-        <meta
-            property="twitter:image"
-            content="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalURL} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={socialImageURL} />
 
-        <!-- Schema.org JSON-LD -->
+        <!-- Schema.org JSON-LD enriquecido para superar a la competencia local -->
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "Restaurant",
                 "name": "Restaurante Ixmucare",
-                "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                "description": "Restaurante familiar de mariscos frescos y comida tradicional tabasqueña en Paraíso, Tabasco.",
+                "image": [
+                    "https://ixmucare.netlify.app/interior.jpg",
+                    "https://ixmucare.netlify.app/coctel.jpg"
+                ],
                 "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": "Calle Principal S/N",
+                    "streetAddress": "Calle Ixmucare, Sección Tanques",
                     "addressLocality": "Paraíso",
                     "addressRegion": "Tabasco",
-                    "postalCode": "86600",
+                    "postalCode": "86620",
                     "addressCountry": "MX"
                 },
                 "geo": {
                     "@type": "GeoCoordinates",
-                    "latitude": 18.4,
-                    "longitude": -93.2144
+                    "latitude": 18.3983,
+                    "longitude": -93.2125
                 },
                 "url": "https://ixmucare.netlify.app/",
+                "hasMenu": "https://ixmucare.netlify.app/menu",
                 "telephone": "+529331234567",
-                "servesCuisine": "Mexicana, Mariscos",
-                "priceRange": "$$"
+                "servesCuisine": ["Mariscos", "Comida Mexicana", "Cocina Tradicional Tabasqueña"],
+                "priceRange": "$$",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                        ],
+                        "opens": "10:00",
+                        "closes": "19:00"
+                    }
+                ],
+                "acceptsReservations": "True"
             }
         </script>
     </head>
