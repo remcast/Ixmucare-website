@@ -4,5 +4,109 @@ const pageTitle = "Contacto | Restaurante Ixmucare";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    
+    <section class="relative w-full min-h-[80vh] py-8 md:py-4 flex items-center bg-[url('/ixmucare-restaurante-paraiso.jpg')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-stone-950/50"></div>
+        <div class="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 py-4 md:py-10 px-4 items-center text-center">
+            {/*info de contacto */}
+            <div class="mb-4 p-6 md:px-10 rounded-2xl bg-stone-900/60">
+                <h1 class="text-2xl md:text-3xl md:font-bold text-white uppercase md:text-start">otras formas de contacto</h1>
+                <div>
+                    <h3 class="mt-6 md:mt-8 uppercase text-lime-500 text-lg md:text-start font-bold">Llámanos / Reservaciones</h3>
+                    <p class="md:text-start text-stone-50">+52 933 *** ****</p>
+                </div>
+                <div>
+                    <h3 class="mt-2 uppercase text-lime-500 text-lg md:text-start font-bold">Correo / Facturación</h3>
+                    <p class="md:text-start text-stone-50">contacto@ixmucare.com.mx</p>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="mt-2 uppercase text-lime-500 text-lg md:text-start font-bold">Siguenos</h3>
+                    {/*REDES sOCIALES */}
+                    <div class="flex flex-grip gap-4 mt-4">
+                        <div>
+                            <a href="">
+                                <img src="/instagram.png" alt="insta"width="24" height="24">
+                            </a>  
+                        </div>
+                        <div>
+                            <a href="">
+                                <img src="/facebook.png" alt="insta"width="24" height="24">
+                            </a> 
+                        </div>  
+                    </div>
+                </div>
+                <div class="flex flex-col text-center md:text-left mt-6">
+                    <address class="not-italic mb-6 text-stone-200 leading-relaxed">
+                        <p class="text-lg font-medium">Calle Ixmucare, sección tanques, </p>
+                        <p class="">Paraíso, Tabasco, México. CP 86620</p>
+                    </address>
+                </div>
+            </div>
+            {/*Formulario */}
+            <div class="flex flex-col">
+                <form method="post" action=""
+                class="flex flex-col w-full max-w-md mx-auto bg-stone-800 rounded-2xl">
+                    <div class="pt-4 mb-4">
+                        <h3 class="text-2xl font-medium text-lime-400">Formulario de contacto</h3>
+                        <p class="text-x1 text-stone-50">!Dejanos un mensaje!</p>
+                    </div>
+                    {/*Nombre */}
+                    <label class="flex flex-col w-full max-w-2xs mx-auto gap-2">
+                        <span class="text-start text-lime-400">Nombre</span>
+                        <input 
+                        type="text"
+                        name="nombre"
+                        pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]{0,40}"
+                        maxlength="40" 
+                        title="El nombre nodebe ser mayor a 40 caracteres, sin números ni caracteres especiales."
+                        required
+                        placeholder="E.g.Juan"
+                        class="text-amber-200 px-2 py-1 border border-stone-50 rounded-sm outline-none focus:border-blue-500 valid:border-lime-500 invalid:focus:border-red-500"
+                        />
+                    </label>
+                    {/*Telefono */}
+                    <label class="flex flex-col w-full max-w-2xs mx-auto mt-5 gap-2">
+                        <span class="text-start text-lime-400">Teléfono Móvil</span>
+                        <input
+                        type="tel"
+                        name="telefono"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        title="Debe contener exactamente 10 números"
+                        required
+                        placeholder="933*******"
+                        class="text-amber-200 px-2 py-1 border border-stone-50 rounded-sm outline-none focus:border-blue-500 valid:border-lime-500 invalid:focus:border-red-500"/>
+                    </label>
+                    {/*Correo */}
+                    <label class="flex flex-col w-full max-w-2xs mx-auto mt-5 gap-2">
+                        <span class="text-start text-lime-400">Correo</span>
+                        <input
+                        type="email"
+                        name="correo"
+                        title="Credenciales no validas"
+                        required
+                        placeholder="correo@gmail.com"
+                        class="text-amber-200 px-2 py-1 border border-stone-50 rounded-sm outline-none focus:border-blue-500 valid:border-lime-500 invalid:focus:border-red-500"/>
+                    </label>
+                    {/*text area*/}
+                    <label class="flex flex-col w-full max-w-2xs mx-auto gap-2 mt-5">
+                        <span class="text-lime-400">Comentarios</span>
+                        <textarea 
+                        name="comnetarios"
+                        rows="3"
+                        maxlength="200"
+                        title="maximo 200 carecteres"
+                        class="text-amber-200 resize-none px-2 py-1 border border-stone-50 rounded-sm outline-none focus:border-blue-500"
+                        ></textarea>
+                    </label>
+                    <button
+                    type="submit"
+                    class="max-w-1/3 mx-auto px-10 md:px-14 py-5 mb-8 rounded-2xl mt-8 bg-amber-200 shadow-lg"
+                    >
+                        Enviar
+                    </button>                 
+                </form>
+            </div>
+        </div>
+    </section>
+    </BaseLayout>
 </BaseLayout>

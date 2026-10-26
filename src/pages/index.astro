@@ -9,16 +9,16 @@ const pageTitle = "Restaurante Ixmucare | Restaurante en Paraíso";
 
 <Hero/>
 
-<section class="max-w-2xl mx-auto md:max-w-6xl py-4 px-4 mb-2 bg-stone-50">
+<section class="w-full px-8 py-10 md:px-24 bg-[#fefae0]">
     <div class="flex flex-col justify-center items-center text-center">
-        <h3 class="text-2xl font-medium mb-2">
+        <h3 class="text-3xl font-medium mb-2">
             Explora nuestro menú
         </h3>
-        <p class="text-stone-600 mb-8"> 
+        <p class="text-stone-600 mb-8 text-lg max-w-2xl"> 
             Descubre una selección de platillos preparados con ingredientes frescos y el auténtico sazón de Paraíso.
         </p>
 
-        <a href="../menu" class="border-2 border-lime-300 hover:bg-lime-300 hover:text-white rounded-3xl p-4">
+        <a href="../menu" class="bg-lime-800 text-stone-50 hover:bg-lime-300 hover:text-white rounded-3xl px-6 py-4 shadow-xl">
             VER MENÚ
         </a>
     </div>
@@ -56,19 +56,48 @@ const pageTitle = "Restaurante Ixmucare | Restaurante en Paraíso";
     </div>  
 </section>
 
-<section class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 px-4 md:px-14 p-10 bg-amber-200  justify-center">
-    <div class="max-w-2xs mx-auto mb-8 md:mb-0 text-center flex flex-col">
-        <h3 class="text-2xl text-stone-900 uppercase font-medium mb-4 ">
-            Acerca de Ixmucare..
-        </h3>
-        <p class="text-stone-600 mb-8">
-            Instalaciones de estilo ecoturístico. El ambiente más fresco para relajarte en familia o con amigos.
-        </p>
-        <a href="/about.astro" class="p-5 mb:mt-8 bg-stone-900 text-white rounded-3xl">
-            Saber más
-        </a>
-    </div>
+<section class="w-full px-8 py-8 md:py-20 bg-amber-200">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="flex flex-col items-center text-center md:items-start md:text-left">
+            <h3 class="text-3xl text-stone-900 uppercase font-medium mb-4">
+                Acerca de Ixmucare..
+            </h3>
+            <p class="text-stone-600 mb-8 text-lg leading-relaxed">
+                Instalaciones de estilo ecoturístico. El ambiente más fresco para relajarte en familia o con amigos.
+            </p>
+            {/* ICONOS */}
+            <div class="flex flex-grid gap-4 mb-8 md:justify-start">
+                <span>
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                    fill="currentColor" viewBox="0 0 24 24" >
+                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                    <path d="m20.71 8.71-1.42-1.42-3.7 3.71H13V8.41l3.71-3.7-1.42-1.42L13 5.59V2h-2v3.59l-2.29-2.3-1.42 1.42L11 8.41V11H8.41l-3.7-3.71-1.42 1.42L5.59 11H2v2h3.59l-2.3 2.29 1.42 1.42L8.41 13H11v2.59l-3.71 3.7 1.42 1.42 2.29-2.3V22h2v-3.59l2.29 2.3 1.42-1.42-3.71-3.7V13h2.59l3.7 3.71 1.42-1.42-2.3-2.29H22v-2h-3.59z"></path>
+                    </svg>
+                </span>
+                <span>
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                    fill="currentColor" viewBox="0 0 24 24" >
+                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                    <path d="M10 19c0 1.1.89 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2m7.66-3.61c-1.51-1.51-3.52-2.34-5.66-2.34s-4.15.83-5.66 2.34l1.41 1.41c1.13-1.13 2.64-1.76 4.24-1.76s3.11.62 4.24 1.76l1.41-1.41Z"></path><path d="M20.49 12.57C18.22 10.3 15.21 9.05 12 9.05s-6.22 1.25-8.49 3.52l1.42 1.41c1.89-1.89 4.4-2.93 7.07-2.93s5.18 1.04 7.07 2.93z"></path><path d="M.69 9.69 2.1 11.1C4.74 8.46 8.26 7 12 7s7.25 1.46 9.9 4.1l1.41-1.41C20.29 6.67 16.27 5 12 5S3.71 6.66.69 9.69"></path>
+                    </svg>
+                </span>
+                <span>
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                    fill="currentColor" viewBox="0 0 24 24" >
+                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                    <path d="m21.32 6.05-12-4A1.01 1.01 0 0 0 8 3v7.56c-.59-.34-1.27-.56-2-.56-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V4.39l10 3.33v6.84c-.59-.34-1.27-.56-2-.56-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7c0-.43-.28-.81-.68-.95M6 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m12 4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2"></path>
+                    </svg>
+                </span>
+            </div>
 
-    <img src="/interior.jpg"
-        class="rounded-2xl shadow-lg mt-4 md:mt-0"/>
+            <a href="/about" class="px-8 py-3 bg-stone-900 text-white rounded-3xl hover:bg-stone-700 transition-colors shadow-lg">
+                Saber más
+            </a>
+        </div>
+        <img 
+            src="/interior.jpg"
+            alt="Ambiente ecoturístico del restaurante Ixmucare en Paraíso"
+            class="rounded-2xl shadow-xl w-full h-64 md:h-80 object-cover"
+        />
+    </div>
 </section>
