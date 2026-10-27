@@ -1,5 +1,5 @@
 export const categorias = [
-    { id: "entradas", nombre: "Entradas", icono: "icons/pickles.webp" },
+    { id: "entradas", nombre: "Entradas", icono: "/icons/pickles.webp" },
     { id: "sopas", nombre: "Sopas y Caldos", icono: "/icons/soup.webp" },
     { id: "fuertes", nombre: "Platos Fuertes", icono: "/icons/entrada.webp" },
     { id:"pescados", nombre:"Pescados", icono:"/icons/fish.webp"},
